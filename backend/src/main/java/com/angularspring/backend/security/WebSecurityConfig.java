@@ -54,7 +54,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
             .antMatchers("/api/auth/signup").permitAll()
             .antMatchers("/api/auth/signin").permitAll()
-            .antMatchers("/api/auth/resource").hasRole("ADMIN")
             .anyRequest().authenticated()
             .and()
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)

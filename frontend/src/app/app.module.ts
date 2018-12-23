@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +13,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
+import { AboutComponent } from './about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
     RegisterComponent,
     HomeComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

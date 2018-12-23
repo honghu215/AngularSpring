@@ -1,10 +1,10 @@
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-expand-lg">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Hong</a>
     </div>
-    <ul class="nav navbar-nav" routerLinkActive="active">
+    <ul class="nav navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
       <li *ngIf="authority === 'user'" class="nav-item">
         <a class="nav-link" routerLink="user">User Board</a>
@@ -12,9 +12,17 @@
       <li *ngIf="authority === 'admin'" class="nav-item">
         <a class="nav-link" routerLink="admin">Admin Board</a>
       </li>
-      
-      <li *ngIf="!authority" class="nav-item">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about">About</a>
+      </li>
+      <li *ngIf="! authority" class="nav-item">
         <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+      <!-- <li *ngIf="authority" class="nav-item">
+        <a class="nav-link" routerLink="auth/logout">Log Out</a>
+      </li> -->
+      <li *ngIf="authority" class="nav-item">
+        <a class="nav-link" (click)="logout()">Log Out</a>
       </li>
     </ul>
   </div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { TokenStorageService } from './../auth/token-storage.service';
 import { AuthService } from './../auth/auth.service';
 import { AuthLoginInfo } from './../auth/login-info';
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -55,6 +57,7 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
+    this.router.navigate(['home']);
     window.location.reload();
   }
 }
