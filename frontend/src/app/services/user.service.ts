@@ -29,7 +29,7 @@ export class UserService {
   }
 
   getUserList(): any {
-    return this.http.get(this.adminUrl + '/users', this.httpOptions);
+    return this.http.get(this.adminUrl + '/users');
   }
 
   deleteUser(userId) {

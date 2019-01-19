@@ -31,8 +31,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.tokenStorage.signOut();
-    this.router.navigate(['auth/login']);
-    window.location.reload();
+    // window.location.reload();
   }
 
 }

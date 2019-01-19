@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'AuthToken';
@@ -9,9 +10,10 @@ const AUTHORITIES_KEY = 'AuthAuthorities';
 })
 export class TokenStorageService {
   private roles: Array<string> = [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   signOut() {
+    this.router.navigate(['auth/login']);
     window.sessionStorage.clear();
   }
 
